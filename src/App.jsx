@@ -1,17 +1,17 @@
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import SearchBar from "./components/SearchBar";
-import CategoryGrid from "./components/CategoryGrid";
-import FeaturedCompanies from "./components/FeaturedCompanies";
+import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";    // we built this earlier
 
-function App() {
+export default function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <SearchBar />
-      <CategoryGrid />
-      <FeaturedCompanies />
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

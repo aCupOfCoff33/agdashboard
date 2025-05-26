@@ -1,31 +1,38 @@
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";        // ← NEW
 import logo from "../assets/logo.png";
 import profile from "../assets/profile.png";
 import Container from "./Container.jsx";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
+
   return (
     <nav className="w-full border-b border-gray-200 bg-white">
       <Container className="flex items-center py-3">
         {/* left group: logo + links */}
         <div className="flex items-center space-x-8">
-          <img src={logo} alt="American Global" className="h-8 w-auto" />
+          <Link to="/">
+            <img src={logo} alt="American Global" className="h-8 w-auto" />
+          </Link>
+
           {/* desktop links */}
           <div className="hidden md:flex items-center space-x-6">
-            {[
-              { href: "#", label: "Home" },
-              { href: "#about", label: "About" },
-              { href: "#contact", label: "Contact" },
-            ].map((l) => (
-              <a
+            {links.map((l) => (
+              <Link
                 key={l.label}
-                href={l.href}
+                to={l.to}
                 className="text-sm font-medium text-gray-600 hover:text-gray-900"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -53,18 +60,15 @@ export default function Navbar() {
       {/* mobile dropdown */}
       {open && (
         <Container className="border-t border-gray-200 pb-4 md:hidden">
-          {[
-            { href: "#", label: "Home" },
-            { href: "#about", label: "About" },
-            { href: "#contact", label: "Contact" },
-          ].map((l) => (
-            <a
+          {links.map((l) => (
+            <Link
               key={l.label}
-              href={l.href}
+              to={l.to}
+              onClick={() => setOpen(false)}          // ← close menu
               className="block py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </Container>
       )}
