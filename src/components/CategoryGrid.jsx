@@ -19,7 +19,7 @@ export default function CategoryGrid() {
       <Container>
         <h2 className="text-lg font-bold text-gray-900">Explore by Category</h2>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {loading
             ? Array.from({ length: 7 }).map((_, idx) => (
                 <div

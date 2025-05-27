@@ -15,11 +15,11 @@ export default function FeaturedCompanies() {
   }, []);
 
   return (
-    <section className="w-full mt-12">
+    <section className="w-full mt-12 mb-12">
       <Container>
         <h2 className="text-lg font-bold text-gray-900">Featured Companies</h2>
 
-        <div className="mt-8 grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 justify-center gap-6 lg:grid-cols-4">
           {loading
             ? Array.from({ length: 4 }).map((_, idx) => (
                 <div

@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col lg:flex-row items-center justify-center gap-12">
+      <div className="max-w-7xl mx-auto px-4 py-32 flex flex-col lg:flex-row items-center justify-center gap-12">
         {/* Image */}
         <img
           src="https://americanglobal.com/wp-content/uploads/2024/03/AboutSquare_0002_Culture-and-Career-Button-1-1.jpg"
