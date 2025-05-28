@@ -1,30 +1,36 @@
 // src/components/SearchBar.jsx
-import { Search } from "lucide-react"; // Changed icon to Search for consistency
+import { Search } from "lucide-react";
+import { useState, useEffect } from "react";
 import Container from "./Container";
-import { useState } from "react";
 
-export default function SearchBar({ onSearchChange }) {
-  const [inputValue, setInputValue] = useState("");
+export default function SearchBar({ defaultValue = "", onSearch }) {
+  const [query, setQuery] = useState(defaultValue);
 
-  const handleChange = (event) => {
-    const query = event.target.value;
-    setInputValue(query);
-    if (onSearchChange) {
-      onSearchChange(query);
+  // Live search effect
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (typeof onSearch === "function") {
+      onSearch(trimmed);
     }
-  };
+  }, [query, onSearch]);
 
   return (
-    <Container className="relative mt-6 mb-6"> {/* Added mb-6 */}
-      <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" /> {/* Added pointer-events-none */}
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleChange}
-          placeholder="Search for companies, technologies or solutions"
-          className="w-full rounded-xl border border-gray-300 bg-gray-50 pl-12 pr-4 py-3 text-sm placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100" // Increased pl
-        />
+    <Container>
+      <div className="pt-8 w-full">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap- w-full rounded-xl bg-gray-100 px-4 py-2 focus-within:ring-2 focus-within:ring-primary-500" style={{ height: '48px' }}>
+          <div className="flex items-center gap-2 w-full">
+            <Search className="h-6 w-6 text-gray-500" aria-hidden="true" />
+            <input
+              type="search"
+              name="search"
+              aria-label="Search"
+              placeholder="Search companies or tech"
+              className="w-full bg-transparent text-base placeholder-gray-500 focus:outline-none"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
+        </div>
       </div>
     </Container>
   );
