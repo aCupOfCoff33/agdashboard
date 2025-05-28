@@ -661,7 +661,7 @@ export const companies = [
     id: 17,
     name: "RodRadar",
     subheading: "Live Dig Radar (LDR) for underground utility detection.",
-    logo: "https://via.placeholder.com/100.png?text=RodRadar",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHhrm3NdoTchg/company-logo_200_200/company-logo_200_200/0/1666250590787/rodradar_logo?e=1753920000&v=beta&t=-s9Nr6FCf99xZc32xZffvaVDLOBGwZASULY4Lxc85t8",
     categoryId: 7,
     details: {
       overview: "RodRadar offers its Live Dig Radar (LDR) technology, which automatically detects underground utility infrastructure in real-time, on location, without the need for expert analysis. Its product, LDR Excavate, an excavator digging bucket with integrated LDR technology, detects all types of pipes and utilities, including gas, power, communications, fiber-optics, water, oil, and chemicals - in different soils and types of substrates. The system works by having the driver use the digging bucket to scan a section of the ground, then being provided a visual mapping of underground utilities. LDR technology overcomes existing GPR limitations, detecting underground utilities during excavation at any depth.",
@@ -699,7 +699,7 @@ export const companies = [
     id: 18,
     name: "SafetyCulture",
     subheading: "Mobile-first operations platform for safety & quality.",
-    logo: "https://via.placeholder.com/100.png?text=SafetyCulture",
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQFMxR0B_JddtQ/company-logo_200_200/company-logo_200_200/0/1688336869599/safetyculturehq_logo?e=1753920000&v=beta&t=D-cZ4dmwiz7Wll5Y-vhc3WQPSyaFDnb85HmI3tHdJ8s",
     categoryId: 1,
     details: {
       overview: "Safety Culture's customers use its solution by leveraging its mobile application and platform to conduct inspections, audits, and checks, digitizing traditional paper processes for efficiency. Frontline workers utilize the app for real-time incident reporting and issue notification, which promotes both proactive and reactive safety measures. Task management features enable users to assign and follow up on action items, ensuring that issues are resolved promptly. The platform also includes a training module for microlearning, which targets specific learning needs like reminding employees of protocols after an absence. Customers use the platform's data analytics to identify trends and areas for improvement, informing training and risk mitigation strategies. Additionally, Safety Culture's platform has a broad set of tools that integrate with APIs for additional functionalities like asset tracking and temperature monitoring. This allows businesses to monitor equipment and environmental conditions, further contributing to safety and compliance. The system's flexibility allows users to tailor the platform to their specific industry needs and operational challenges, helping them to manage risks effectively and streamline their safety processes.",
@@ -738,7 +738,7 @@ export const companies = [
     id: 19,
     name: "Taiyō.Al",
     subheading: "Infra-intelligence platform for construction & procurement.",
-    logo: "https://via.placeholder.com/100.png?text=Taiyo.Al",
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGza-OnfnzWrw/company-logo_200_200/company-logo_200_200/0/1684787388092/taiy_logo?e=1753920000&v=beta&t=wTNMDebgJy-EOqO5bif5dj8pWamks8E2bzWtNxhoSEQ",
     categoryId: 5,
     details: {
       overview: "Taiyō.Al is an advanced infra-intelligence platform designed to revolutionize the infrastructure construction and public procurement sector, which is often plagued by inefficiencies and high upfront costs. Utilizing a proprietary data mesh, it aggregates a vast array of specific fields to form intelligent analyses for early stage project decisions. This includes detailed information on infrastructure projects, tenders, brownfield assets, and risk conditions gathered from official government announcements, marketplace data, and real-time contract opportunities. By integrating external data on macro and micro activities, alongside news and media mentions, Taiyō.Al offers a comprehensive view of each project's landscape. This enables clients to incorporate their internal data, such as claims or bid data, to analyze alongside external information. The platform also provides insights into project failure rates, sector activities, key project sponsors, contractor performance, and risk analysis. It's equipped with tools for benchmarking and similar project analysis, crucial for decision-making. Taiyō.Al's real-time updates ensure the latest information is always at hand, significantly benefiting contractors and owners by improving visibility of opportunities, aiding in risk management, and enhancing decision-making in the largest yet most inefficient sector of the global economy.",
@@ -776,7 +776,7 @@ export const companies = [
     id: 20,
     name: "Tomorrow.io",
     subheading: "Weather and climate intelligence platform.",
-    logo: "https://via.placeholder.com/100.png?text=Tomorrow.io",
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQGUEur2TiCkNQ/company-logo_200_200/company-logo_200_200/0/1719954817874/tomorrow_io_logo?e=1753920000&v=beta&t=mv1HIVsWBTXGFz-R01Vuz8NTxaMwkJM9ZlwkgH2XUU8",
     categoryId: 3,
     details: {
       overview: "Tomorrow.io is a weather intelligence and climate adaptation platform. From early warning systems to actionable insights, organizations can predict impact, mitigate risk, and ensure operational resilience with Tomorrow.io. They provide highly localized weather predictions that can cater to specific business needs on construction sites. Their proprietary technology merges data from various sources, including wireless communication networks, street cameras, satellites, traditional weather stations, and IoT devices. Using advanced data analytics and machine learning algorithms, they process this data to provide hyper-local weather predictions with higher accuracy than traditional methods. Additionally, Tommorrow.io offers protocols for various asset types, scopes of work and best practices that get pushed out when specific weather conditions are prevalent.",
@@ -814,7 +814,7 @@ export const companies = [
     id: 21,
     name: "Trusstor",
     subheading: "IoT platform for construction operations and safety.",
-    logo: "https://via.placeholder.com/100.png?text=Trusstor",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFM_fKFTuGanw/company-logo_200_200/company-logo_200_200/0/1719922235557/trusstor_logo?e=1753920000&v=beta&t=dlZ0KSafE5ZwAzUlcGNNMMlL-Yi2FcTAFriLYR7j7Bg",
     categoryId: 7,
     details: {
       overview: "Trusstor's construction operations platform combines zero-intrusion IoT technology with advanced oversight and reporting capabilities, transforming how construction sites are managed and monitored. The platform uses personal smart badges, location beacons, and equipment locators, integrating into the on-site environment to provide real-time insights. The personal smart badge and location beacons can work in unison to identify safety alerts such as tracking repeating patterns of workers to specific areas, enhancing workflow optimization. The system can also alert the worker if they are entering high risk zones based on their compliance certifications and training. Additionally, the technology identifies the exact floors where workers or equipment are located, aiding in precise site management for vertical builds. This data assists in time management and efficiency analysis, enabling managers to identify and address operational bottlenecks and streamline construction processes.",
@@ -852,7 +852,7 @@ export const companies = [
     id: 22,
     name: "Vita",
     subheading: "Intelligent lifting solutions for cranes.",
-    logo: "https://via.placeholder.com/100.png?text=Vita",
+    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEubR-L7ZM6uw/company-logo_200_200/company-logo_200_200/0/1631355471437/vita_logo?e=1753920000&v=beta&t=dsRYGPJ0u7V2FIzfyRUxxPgH-y1UGikOIPPSj5YFSFA",
     categoryId: 7,
     details: {
       overview: "Vita's innovative technology empowers on-site teams, letting them lift more swiftly, streamline installation, and prioritize safety. They provide an intelligent lifting solution for cranes, amplifying the control, efficiency, and safety of load handling tasks. Their technology, the Vita Load Navigator (VLN) sits in between the crane hook and the load. The VLN uses jets to counteract the unpredictable effects of wind and weather, thereby minimizing delays. Furthermore, Vita emphasizes safety, allowing workers to operate at a safe distance and diminish reliance on taglines. They also offer precision autonomous lifting paths that can be programmed to save the crane operator time.",
@@ -890,7 +890,7 @@ export const companies = [
     id: 23,
     name: "ClimaTwin",
     subheading: "Climate risk intelligence for infrastructure digital twins.",
-    logo: "https://via.placeholder.com/100.png?text=ClimaTwin",
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG3JBH7ufzfSg/company-logo_200_200/company-logo_200_200/0/1713269791108/climatwin_com_logo?e=1753920000&v=beta&t=aA2Q-7aOcs0K2BpHbnX1doMVq3reUldR6swxUlGJUjI",
     categoryId: 3,
     details: {
       overview: "ClimaTwin is a climate risk intelligence solution for infrastructure assets and the built environment. By connecting complex climate models and infrastructure digital twins, their solution enables owner-operators, investors, governments, and engineers to aggregate, visualize, and analyze disparate datasets, revealing site-specific insights at the hyper-local scale of assets. ClimaTwin aggregates physical infrastructure datasets with climate models to visualize and assess how the asset will perform under acute and chronic climate hazards. Customers can create an enhanced BIM-GIS digital twin for buildings and civil projects to simulate and identify vulnerabilities to weather variables. Their goal is to help customers adapt for climate resilience to assess the asset's lifecycle.",
@@ -928,7 +928,7 @@ export const companies = [
     id: 24,
     name: "Wint",
     subheading: "AI-powered water management and leak prevention.",
-    logo: "https://via.placeholder.com/100.png?text=Wint",
+    logo: "https://media.licdn.com/dms/image/v2/C560BAQGeB00AMYpTjA/company-logo_200_200/company-logo_200_200/0/1630590555436/wintwi_logo?e=1753920000&v=beta&t=etzNFi7LIzPer0-4j3LDKOcmi8rwV5ihyd1VHM1STCo",
     categoryId: 7,
     details: {
       overview: "Wint water management system detects and stops leaks at the source using Artificial Intelligence. It alerts you when water is leaking and can automatically shut it off. Intelligent real-time monitoring identifies sources of leaks and wastewater preventing damage, reducing consumption, and cutting the resulting carbon emissions. Wint also integrates artificial intelligence with real-time water flow analytics; its devices are installed at water ingress points and main branches, where they analyze the flow and consumption patterns. The Al has been trained on vast amounts of data and can understand typical usage patterns. Any deviation from the norm, like a sudden spike in water usage, is flagged as a potential leak, leading to an alert being sent out. The system is cloud-connected, allowing for remote monitoring and control. The system is based on technology supporting water leak detection, water waste prevention, water flow analysis, and automatic shutoff.",
@@ -966,7 +966,7 @@ export const companies = [
     id: 25,
     name: "Kwant",
     subheading: "Workforce management and safety platform for construction.",
-    logo: "https://via.placeholder.com/100.png?text=Kwant",
+    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQG6H9GxyFfYmw/company-logo_200_200/company-logo_200_200/0/1657655519937/ontarget_software_logo?e=1753920000&v=beta&t=MqZibxQFTXjp_JYzchnVa060kIipVtiUypq91yo9YdE",
     categoryId: 7,
     details: {
       overview: "Kwant is a workforce management & safety platform built to accelerate construction through productivity and safety. Using smart wearables and plug-n-play sensors, Kwant connects jobsite data and provides real-time insights & actionable reports. They deploy smart badges and wearables that capture real-time data with minimal infrastructure and combine it with workforce data (skills, training, compliance, and safe alerts), project data (schedule, BIM, and production rate), and provide actionable insights. Using a proprietary algorithm, Kwant prioritizes high-risk operations, workers, activities, and zones for stakeholders to take proactive action. While leveraging these data points, Kwant delivers a suite of functionalities designed to optimize construction and industrial project outcomes which includes, real-time analytics, productivity tracking, safety monitoring, decision-making insights, and integrative capabilities.",
@@ -1004,7 +1004,7 @@ export const companies = [
     id: 26,
     name: "RamTech",
     subheading: "Wireless fire alarm systems for construction sites.",
-    logo: "https://via.placeholder.com/100.png?text=RamTech",
+    logo: "https://media.licdn.com/dms/image/v2/C560BAQEEzuqalXNz7w/company-logo_200_200/company-logo_200_200/0/1669810783586/ramtech_corporation_logo?e=1753920000&v=beta&t=dL3jAVJj4DtRNhgitZKqEcmu7C7Mg4hJrEP5NcezHRM",
     categoryId: 7,
     details: {
       overview: "Ramtech Electronics specializes in advanced technological solutions, and with their WES3 system, they have established a foothold in the realm of fire safety for construction sites and buildings. Ramtech's WES3 system is a temporary wireless fire alarm system designed primarily for construction sites. Utilizing advanced wireless technology, WES3 ensures swift communication in emergency scenarios, bolstering onsite safety. With features like medical alerts, fire detection, and evacuation functionalities, it provides comprehensive protection. The system's design is rooted in the understanding of the dynamic nature of construction sites, emphasizing easy installation, mobility, and scalability.",

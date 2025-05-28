@@ -24,7 +24,7 @@ const CompanyResultsGrid = ({ companies }) => {
           <img
             src={c.logo || "https://via.placeholder.com/100"}
             alt={c.name}
-            className="w-16 h-16 mb-2 object-contain"
+            className="w-16 h-16 mb-2 object-contain rounded-lg"
           />
           <h3 className="font-semibold">{c.name}</h3>
           <p className="text-xs text-gray-600">{c.subheading}</p>
