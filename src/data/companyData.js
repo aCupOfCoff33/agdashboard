@@ -163,7 +163,7 @@ export const companies = [
   },
   {
     id: 4,
-    name: "Construction Industry Resources' Construction Labor Market Analyzer (CLMA)",
+    name: "CLMA",
     subheading: "Labor risk analytics for construction projects.",
     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHvyL67ZTNruw/company-logo_200_200/B4DZWljqF9G4AQ-/0/1742239343436/myclma_logo?e=1753920000&v=beta&t=bbmy9GrGU8uXc1Or9O1vW8l2tqkpCJwU5PQxIlR-G4U",
     categoryId: 5,

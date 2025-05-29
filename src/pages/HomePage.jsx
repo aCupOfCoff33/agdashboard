@@ -5,34 +5,10 @@ import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import Container from "../components/Container";
 import { fetchAllCompanies } from "../services/api";
+import ExpandableCardGrid from "../components/ui/expandable-card-demo-grid"; // Import the new component
 
-const CompanyResultsGrid = ({ companies }) => {
-  if (!companies.length) {
-    return (
-      <div className="text-center py-10 text-gray-500">
-        No companies match your filters.
-      </div>
-    );
-  }
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
-      {companies.map((c) => (
-        <div
-          key={c.id}
-          className="border p-4 rounded-lg shadow bg-white flex flex-col items-center text-center"
-        >
-          <img
-            src={c.logo || "https://via.placeholder.com/100"}
-            alt={c.name}
-            className="w-16 h-16 mb-2 object-contain rounded-lg"
-          />
-          <h3 className="font-semibold">{c.name}</h3>
-          <p className="text-xs text-gray-600">{c.subheading}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
+// Remove or comment out the old CompanyResultsGrid
+// const CompanyResultsGrid = ({ companies }) => { ... };
 
 export default function HomePage() {
   /* ---------- master state ---------- */
@@ -84,9 +60,7 @@ export default function HomePage() {
     if (categoryType === "digital" && selectedDigital.size) {
       cur = cur.filter((c) => {
         const raw = c.details?.originalDigitalCategory;
-        // some companies may give a string, others an array, or nothing at all
         const cats = Array.isArray(raw) ? raw : raw ? [raw] : [];
-
         return Array.from(selectedDigital).every((sel) =>
           cats.some((cat) =>
             (cat || "").toLowerCase().includes(sel.toLowerCase())
@@ -140,7 +114,7 @@ export default function HomePage() {
           )}
         </AnimatePresence>
 
-        {/* results grid */}
+        {/* results grid - Replace CompanyResultsGrid with ExpandableCardGrid */}
         <AnimatePresence mode="wait">
           <motion.div
             key="results"
@@ -149,7 +123,8 @@ export default function HomePage() {
             animate="visible"
             exit="exit"
           >
-            <CompanyResultsGrid companies={filtered} />
+            {/* Pass the filtered companies to the new grid component */}
+            <ExpandableCardGrid companies={filtered} />
           </motion.div>
         </AnimatePresence>
       </Container>

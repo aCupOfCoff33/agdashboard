@@ -7,12 +7,14 @@ export interface Company {
   details: {
     overview: string;
     regions?: string[];
+    risksTreatedOriginal?: string[]; // Added this for filter logic consistency
     risksTreatedWeb?: string[];
     costModel?: { type: string; description: string };
     keySolutions?: Array<{ title: string; description: string }>;
     customerSuccessStories?: Array<{ title: string; description: string; imageURL?: string }>;
     impactMetrics?: Array<{ metricName: string; value: string }>;
     aboutCompanyText?: string;
-    // ... add other fields from companyData.js details as needed
+    originalDigitalCategory?: string[] | string; // Added for filter logic
+    employeeCount?: string; // Used in ExpandableCardGrid
   };
 }
