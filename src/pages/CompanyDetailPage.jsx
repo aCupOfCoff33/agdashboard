@@ -7,7 +7,7 @@ import { companies as allCompanies } from '../data/companyData';
 import Container from '../components/Container';
 import { KeySolutionIcon } from '../components/KeySolutionIcon';
 
-const waterDropletImageUrl = "https://cdn-icons-png.flaticon.com/512/3611/3611770.png";
+const waterDropletImageUrl = "https://www.svgrepo.com/download/33644/money-bag.svg";
 
 export default function CompanyDetailPage() {
   const { companyId } = useParams();
