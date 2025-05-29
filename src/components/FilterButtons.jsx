@@ -112,11 +112,14 @@ export default function FilterButtons({
                 variants={chip}
                 layout
                 onClick={() => toggleSelection(label)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-base border transition-colors ${
-                  isSelected
-                    ? "bg-[#9acff5] text-black border-[#93cdf7]"
-                    : "bg-gray-100 text-black border-transparent hover:bg-gray-200"
-                }`}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-base border transition-colors
+                  ${
+                    isSelected
+                      ? categoryType === "tech"
+                        ? "bg-blue-300 text-black border-blue-400"
+                        : "bg-green-300 text-black border-green-400"
+                      : "bg-gray-100 text-black border-transparent hover:bg-gray-200"
+                  }`}
               >
                 {Icon && <Icon className="w-4 h-4" />}
                 {label}
