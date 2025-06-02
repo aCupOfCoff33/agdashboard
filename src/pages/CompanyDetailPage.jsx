@@ -1,9 +1,9 @@
 // src/pages/CompanyDetailPage.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import motion
-import { ExternalLink } from 'lucide-react'; // Import ExternalLink
-import { companies as allCompanies } from '../data/companyData';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import { fetchCompanyByIdGraphQL } from '../services/companyService'; // Ensure path is correct
 import Container from '../components/Container';
 import { KeySolutionIcon } from '../components/KeySolutionIcon';
 
@@ -17,34 +17,42 @@ export default function CompanyDetailPage() {
   const [activeTab, setActiveTab] = useState('about');
 
   useEffect(() => {
-    try {
-      const numericCompanyId = parseInt(companyId, 10);
-      const foundCompany = allCompanies.find(c => c.id === numericCompanyId);
-      if (foundCompany) setCompany(foundCompany);
-      else setError('Company not found.');
-    } catch (e) {
-      setError('Failed to load company data.');
-      console.error(e);
-    } finally {
-      setLoading(false);
+    if (companyId) {
+      setLoading(true);
+      setError(null);
+      fetchCompanyByIdGraphQL(companyId)
+        .then(data => {
+          if (data) {
+            setCompany(data);
+          } else {
+            setError('Company not found.');
+          }
+          setLoading(false);
+        })
+        .catch(e => {
+          setError('Failed to load company data.');
+          console.error("Error fetching company details on CompanyDetailPage", e);
+          setLoading(false);
+        });
     }
   }, [companyId]);
 
-  if (loading) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl font-semibold text-slate-700 ">Loading...</p></div>;
-  if (error) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl text-red-600 font-semibold ">{error}</p></div>;
-  if (!company) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl text-slate-700 ">Company data unavailable.</p></div>;
-
-  const companyCategoryDisplay = company.details.originalDigitalCategory
+  const companyCategoryDisplay = company?.details?.originalDigitalCategory
     ? (Array.isArray(company.details.originalDigitalCategory) ? company.details.originalDigitalCategory.join(', ') : company.details.originalDigitalCategory)
     : 'N/A';
 
-  const keySolutionsCount = company.details.keySolutions?.length || 0;
+  const keySolutionsCount = company?.details?.keySolutions?.length || 0;
   let keySolutionsGridCols = "lg:grid-cols-4";
   if (keySolutionsCount === 3) keySolutionsGridCols = "lg:grid-cols-3";
   else if (keySolutionsCount === 2) keySolutionsGridCols = "lg:grid-cols-2";
   else if (keySolutionsCount === 1) keySolutionsGridCols = "lg:grid-cols-1";
 
-  const companyWebsite = "#"; // Placeholder for company.details.website
+  const companyWebsite = company?.details?.website || "#"; // Assuming 'website' might be in details
+
+  if (loading) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl font-semibold text-slate-700 ">Loading...</p></div>;
+  if (error) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl text-red-600 font-semibold ">{error}</p></div>;
+  if (!company) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl text-slate-700 ">Company data unavailable.</p></div>;
+
 
   return (
     <div className="bg-gray-50 min-h-screen ">
@@ -59,22 +67,22 @@ export default function CompanyDetailPage() {
             />
             <div className="pt-1 flex-grow">
               <motion.a
-                href={companyWebsite} // Use the actual website URL if available
+                href={companyWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-baseline group no-underline mb-1"
                 initial="rest"
                 whileHover="hovered"
-                animate="rest" // ensure it starts in the "rest" state
+                animate="rest"
               >
                 <h1 className="text-slate-800 text-3xl md:text-4xl font-bold leading-tight group-hover:text-slate-600 group-hover:underline transition-colors duration-200">
                   {company.name}
                 </h1>
                 <motion.div
-                  className="ml-2" // Adjusted margin
+                  className="ml-2"
                   variants={{
                     rest:    { x: 0, y: 0, opacity: 0.6 },
-                    hovered: { x: 3, y: -3, opacity: 1 } // Slightly adjusted animation
+                    hovered: { x: 3, y: -3, opacity: 1 }
                   }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
                 >
@@ -82,14 +90,13 @@ export default function CompanyDetailPage() {
                 </motion.div>
               </motion.a>
 
-              <p className="text-slate-600 text-lg font-normal leading-normal mt-1"> {/* Added mt-1 for spacing after h1 */}
+              <p className="text-slate-600 text-lg font-normal leading-normal mt-1">
                 {company.subheading}
               </p>
               <p className="text-slate-500 text-sm font-normal leading-normal mt-1">
                 {companyCategoryDisplay}
                 {company.details.employeeCount && ` | ${company.details.employeeCount}`}
               </p>
-              {/* Display Regions */}
               {company.details.regions && company.details.regions.length > 0 && (
                 <p className="text-slate-500 text-sm font-normal leading-normal mt-1">
                   Regions: {company.details.regions.join(', ')}
@@ -189,7 +196,7 @@ export default function CompanyDetailPage() {
                 <div className="text-slate-700 text-base leading-relaxed prose prose-slate max-w-none mb-8">
                   <p>{company.details.solutionsImpactSummary || "Detailed solutions and impact summary will be provided here."}</p>
                 </div>
-                
+
                 {company.details.phaseOfConstructionOriginal && company.details.phaseOfConstructionOriginal.length > 0 && (
                   <div className="mb-8">
                     <h3 className="text-lg font-semibold text-slate-800 mb-3">Phase of Construction</h3>
@@ -202,7 +209,7 @@ export default function CompanyDetailPage() {
                     </div>
                   </div>
                 )}
-                
+
                 {company.details.stakeholdersImpacted && company.details.stakeholdersImpacted.length > 0 && (
                   <div className="mb-8">
                     <h3 className="text-lg font-semibold text-slate-800 mb-3">Stakeholders Impacted</h3>
@@ -229,17 +236,17 @@ export default function CompanyDetailPage() {
                   </div>
                 )}
 
-                {company.details.costModel && (
+                {company.details.costModel && (company.details.costModel.type || company.details.costModel.description) && (
                   <div className="mb-8 p-6 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center gap-6">
                     <div className="flex-grow">
                       <h3 className="text-lg font-semibold text-slate-800 mb-2">Cost</h3>
-                      <p className="text-md text-slate-900 font-semibold">{company.details.costModel.type}</p>
-                      <p className="text-sm text-slate-600 mt-1 leading-relaxed">{company.details.costModel.description}</p>
+                      {company.details.costModel.type && <p className="text-md text-slate-900 font-semibold">{company.details.costModel.type}</p>}
+                      {company.details.costModel.description && <p className="text-sm text-slate-600 mt-1 leading-relaxed">{company.details.costModel.description}</p>}
                     </div>
                     <div className="flex-shrink-0">
-                      <img 
-                        src={waterDropletImageUrl} 
-                        alt="Cost model illustration" 
+                      <img
+                        src={waterDropletImageUrl}
+                        alt="Cost model illustration"
                         className="w-24 h-24 md:w-32 md:h-32 object-contain opacity-75"
                       />
                     </div>
