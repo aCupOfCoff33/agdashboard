@@ -1,4 +1,3 @@
-// filepath: c:\Users\AaryanJoharapurkar\agdashboard\src\hooks\use-outside-click.tsx
 import React, { useEffect } from "react";
 
 export const useOutsideClick = (
@@ -6,9 +5,9 @@ export const useOutsideClick = (
   callback: Function
 ) => {
   useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
+    const listener = (event: any) => {
       // DO NOTHING if the element being clicked is the target element or their children
-      if (!ref.current || ref.current.contains(event.target as Node)) {
+      if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
       callback(event);

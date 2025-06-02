@@ -1,16 +1,36 @@
-import { ArrowRight } from "lucide-react";
+// src/components/SearchBar.jsx
+import { Search } from "lucide-react";
+import { useState, useEffect } from "react";
 import Container from "./Container";
 
-export default function SearchBar() {
+export default function SearchBar({ defaultValue = "", onSearch }) {
+  const [query, setQuery] = useState(defaultValue);
+
+  // Live search effect
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (typeof onSearch === "function") {
+      onSearch(trimmed);
+    }
+  }, [query, onSearch]);
+
   return (
-    <Container className="relative mt-6">
-      <div className="relative">
-        <ArrowRight className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-        <input
-          type="text"
-          placeholder="Search for companies, technologies or solutions"
-          className="w-full rounded-xl border border-gray-300 bg-gray-50 pl-10 pr-4 py-3 text-sm placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
-        />
+    <Container>
+      <div className="pt-8 w-full">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap- w-full rounded-xl bg-gray-100 px-4 py-2 focus-within:ring-2 focus-within:ring-primary-500" style={{ height: '48px' }}>
+          <div className="flex items-center gap-2 w-full">
+            <Search className="h-6 w-6 text-gray-500" aria-hidden="true" />
+            <input
+              type="search"
+              name="search"
+              aria-label="Search"
+              placeholder="Search companies or tech"
+              className="w-full bg-transparent text-base placeholder-gray-500 focus:outline-none"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
+        </div>
       </div>
     </Container>
   );

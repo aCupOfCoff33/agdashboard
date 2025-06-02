@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage"; 
 import Footer from "./components/Footer";
+import CompanyDetailPage from "./pages/CompanyDetailPage"
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/company/:companyId" element={<CompanyDetailPage />} />
       </Routes>
       <Footer />
     </Router>
