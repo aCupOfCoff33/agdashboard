@@ -81,11 +81,11 @@ export default function ExpandableCardGrid({
   });
 
   const displayCards: InternalCard[] = companies.map((company) => ({
-    id: company.id.toString(),
+    id: String(company.id ?? Math.random()),
     title: company.name,
     description: company.subheading,
     src: company.logo || "https://via.placeholder.com/150x150.png?text=No+Logo",
-    overview: company.details.aboutCompanyText || '',
+    overview: company.details.aboutCompanyText || "",
     employeeCount: company.details.employeeCount,
     regions: company.details.regions,
     originalCompanyData: company,
@@ -241,11 +241,11 @@ export default function ExpandableCardGrid({
                     className="mt-6 pt-6 border-t border-gray-200 flex justify-center"
                   >
                     <Link
-                      to={`/company/${active.originalCompanyData.id}`}
+                      to={`/company/${active.id}`} // always defined after the adapter fix
+                      onClick={handleClose}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={handleClose}
-                      className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors shadow-sm hover:shadow-lg"
+                      className="inline-flex items-center …"
                     >
                       Learn More
                       <ArrowRight size={16} className="ml-2 -mr-1" />

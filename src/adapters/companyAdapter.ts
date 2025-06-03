@@ -1,69 +1,104 @@
-// src/adapters/companyAdapter.ts
-import type { Company } from '../types';
-
-// Interface for the raw company data item (Entity-like structure)
-interface StrapiCompanyEntity {
-  id: string;
-  attributes: {
-    name: string;
-    subheading: string;
-    logo: string;
-    categoryId: number;
-    detail: {
-      overview: string;
-      region?: string[];
-      risksTreatedOriginal?: string[];
-      stakeholdersImpacted?: string[];
-      phaseOfConstructionOriginal?: string[];
-      costOriginal?: string;
-      originalDigitalCategory?: string[] | string;
-      employeeCount?: string;
-      solutionsImpactSummary?: string;
-      keySolutions?: Array<{ id?: string; title: string; description: string }>;
-      projectIntegrationPhases?: string[];
-      risksTreatedWeb?: string[];
-      costModel?: Array<{ id?: string; type: string; description: string }>;
-      impactMetrics?: Array<{ id?: string; metricName: string; value: string }>;
-      aboutCompanyText?: string;
-      customerSuccessStories?: Array<{ id?: string; title: string; description: string; imageURL?: string }>;
-    };
+export interface ApiCompany {
+  documentId: string;      // NEW
+  name: string;
+  subheading: string;
+  logo: string;
+  detail: {
+    id: string;
+    overview?: string;
+    region?: string[];
+    risksTreatedOriginal?: string[];
+    stakeholdersImpacted?: string[];
+    phaseOfConstructionOriginal?: string[];
+    costOriginal?: string;
+    originalDigitalCategory?: string[];
+    employeeCount?: string;
+    solutionsImpactSummary?: string;
+    projectIntegrationPhases?: string[];
+    risksTreatedWeb?: string[];
+    aboutCompanyText?: string;
+    keySolutions?: {
+      id: string;
+      title: string;
+      description: string;
+    }[];
+    impactMetrics?: {
+      id: string;
+      metricName: string;
+      value: string;
+    }[];
+    costModel?: {
+      id: string;
+      type: string;
+      description: string;
+    }[];
+    customerSuccessStories?: {
+      id: string;
+      title: string;
+      description: string;
+      imageURL: string;
+    }[];
   };
 }
 
-export const adaptStrapiCompany = (strapiEntity: StrapiCompanyEntity): Company => {
-  const { id, attributes } = strapiEntity;
-  const { name, subheading, logo, categoryId, detail } = attributes;
+export interface Company {
+  id: string; // uses detail.id
+  name: string;
+  subheading: string;
+  logo: string;
+  details: {
+    id: string;
+    overview: string;
+    regions: string[];
+    risksTreatedOriginal: string[];
+    stakeholdersImpacted: string[];
+    phaseOfConstructionOriginal: string[];
+    costOriginal: string;
+    originalDigitalCategory: string[];
+    employeeCount: string;
+    solutionsImpactSummary: string;
+    projectIntegrationPhases: string[];
+    risksTreatedWeb: string[];
+    aboutCompanyText: string;
+    keySolutions: ApiCompany['detail']['keySolutions'];
+    impactMetrics: ApiCompany['detail']['impactMetrics'];
+    costModel: { id: string; type: string; description: string };
+    customerSuccessStories: ApiCompany['detail']['customerSuccessStories'];
+  };
+}
+
+export const adaptCompany = (raw: ApiCompany): Company => {
+  const { name, subheading, logo, detail } = raw;
 
   return {
-    id: parseInt(id, 10),
+    id: raw.documentId, // use detail.id or fallback to name
     name,
     subheading,
     logo,
-    categoryId,
     details: {
-      overview: detail?.overview || '',
-      regions: detail?.region || [],
-      risksTreatedOriginal: detail?.risksTreatedOriginal || [],
-      stakeholdersImpacted: detail?.stakeholdersImpacted || [],
-      phaseOfConstructionOriginal: detail?.phaseOfConstructionOriginal || [],
-      costOriginal: detail?.costOriginal || '',
-      originalDigitalCategory: detail?.originalDigitalCategory || [],
-      employeeCount: detail?.employeeCount || '',
-      solutionsImpactSummary: detail?.solutionsImpactSummary || '',
-      keySolutions: detail?.keySolutions || [],
-      projectIntegrationPhases: detail?.projectIntegrationPhases || [],
-      risksTreatedWeb: detail?.risksTreatedWeb || [],
-      costModel: (detail?.costModel && detail.costModel.length > 0)
-                   ? detail.costModel[0]
-                   : { type: '', description: '' },
-      impactMetrics: detail?.impactMetrics || [],
-      aboutCompanyText: detail?.aboutCompanyText || '',
-      customerSuccessStories: detail?.customerSuccessStories || [],
+      id: raw.documentId ?? raw.detail?.id ?? raw.name,
+      overview: detail?.overview ?? '',
+      regions: detail?.region ?? [],
+      risksTreatedOriginal: detail?.risksTreatedOriginal ?? [],
+      stakeholdersImpacted: detail?.stakeholdersImpacted ?? [],
+      phaseOfConstructionOriginal: detail?.phaseOfConstructionOriginal ?? [],
+      costOriginal: detail?.costOriginal ?? '',
+      originalDigitalCategory: detail?.originalDigitalCategory ?? [],
+      employeeCount: detail?.employeeCount ?? '',
+      solutionsImpactSummary: detail?.solutionsImpactSummary ?? '',
+      projectIntegrationPhases: detail?.projectIntegrationPhases ?? [],
+      risksTreatedWeb: detail?.risksTreatedWeb ?? [],
+      aboutCompanyText: detail?.aboutCompanyText ?? '',
+      keySolutions: detail?.keySolutions ?? [],
+      impactMetrics: detail?.impactMetrics ?? [],
+      costModel:
+        detail?.costModel && detail.costModel.length > 0
+          ? detail.costModel[0]
+          : { id: '', type: '', description: '' },
+      customerSuccessStories: detail?.customerSuccessStories ?? [],
     },
   };
 };
 
-export const adaptStrapiCompanies = (strapiEntities: StrapiCompanyEntity[]): Company[] => {
-  if (!strapiEntities) return [];
-  return strapiEntities.map(adaptStrapiCompany);
-};
+export const adaptCompanies = (items: ApiCompany[]): Company[] =>
+  items.map(adaptCompany);

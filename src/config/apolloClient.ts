@@ -4,16 +4,8 @@ import { setContext } from '@apollo/client/link/context';
 
 const STRAPI_API_URL_FROM_ENV = (import.meta as any).env.VITE_STRAPI_API_URL;
 const STRAPI_TOKEN_FROM_ENV = (import.meta as any).env.VITE_STRAPI_API_TOKEN;
-
-console.log('[ApolloClient] VITE_STRAPI_API_URL from env:', STRAPI_API_URL_FROM_ENV);
-console.log('[ApolloClient] VITE_STRAPI_API_TOKEN from env:', STRAPI_TOKEN_FROM_ENV);
-
 const STRAPI_API_URL = STRAPI_API_URL_FROM_ENV || 'http://localhost:1337/graphql';
 const STRAPI_TOKEN = STRAPI_TOKEN_FROM_ENV; // No fallback here, let it be undefined if not set
-
-console.log('[ApolloClient] Effective STRAPI_API_URL:', STRAPI_API_URL);
-console.log('[ApolloClient] Effective STRAPI_TOKEN:', STRAPI_TOKEN);
-
 
 const httpLink = createHttpLink({
   uri: STRAPI_API_URL,

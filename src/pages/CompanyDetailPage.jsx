@@ -3,24 +3,24 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { fetchCompanyByIdGraphQL } from '../services/companyService'; // Ensure path is correct
+import { fetchCompanyById } from '../services/companyService'; // Ensure path is correct
 import Container from '../components/Container';
 import { KeySolutionIcon } from '../components/KeySolutionIcon';
 
 const waterDropletImageUrl = "https://www.svgrepo.com/download/33644/money-bag.svg";
 
 export default function CompanyDetailPage() {
-  const { companyId } = useParams();
+  const { id } = useParams();
   const [company, setCompany] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('about');
 
   useEffect(() => {
-    if (companyId) {
+    if (id) {
       setLoading(true);
       setError(null);
-      fetchCompanyByIdGraphQL(companyId)
+      fetchCompanyById(id)
         .then(data => {
           if (data) {
             setCompany(data);
@@ -35,7 +35,7 @@ export default function CompanyDetailPage() {
           setLoading(false);
         });
     }
-  }, [companyId]);
+  }, [documentId]);
 
   const companyCategoryDisplay = company?.details?.originalDigitalCategory
     ? (Array.isArray(company.details.originalDigitalCategory) ? company.details.originalDigitalCategory.join(', ') : company.details.originalDigitalCategory)

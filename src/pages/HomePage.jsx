@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import Container from "../components/Container";
-import { fetchAllCompaniesGraphQL } from "../services/companyService"; // Ensure path is correct
+import { fetchCompanies  } from "../services/companyService"; // Ensure path is correct
 import ExpandableCardGrid from "../components/ui/expandable-card-demo-grid";
 
 export default function HomePage() {
@@ -22,7 +22,7 @@ export default function HomePage() {
   useEffect(() => {
     setLoading(true);
     setError(null); // Reset error on new fetch
-    fetchAllCompaniesGraphQL().then((data) => {
+    fetchCompanies().then((data) => {
       setAll(data);
       setFiltered(data);
       setLoading(false);
