@@ -1,8 +1,10 @@
+// src/graphql/queries.ts
 import { gql } from '@apollo/client';
 
 export const GET_ALL_COMPANIES = gql`
   query GetAllCompanies {
     companies(pagination: { limit: 100 }) {
+      documentId # <<< ADD THIS LINE
       name
       subheading
       logo

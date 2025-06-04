@@ -94,7 +94,8 @@ export default function HomePage() {
   return (
     <>
       <SearchBar onSearch={setSearch} defaultValue={search} />
-      <Container>
+      <Container className="mt-6">
+
         <AnimatePresence mode="wait">
           {!search && (
             <motion.div

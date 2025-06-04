@@ -35,7 +35,7 @@ export default function CompanyDetailPage() {
           setLoading(false);
         });
     }
-  }, [documentId]);
+  }, [id]); // The fix is here: changed documentId to id
 
   const companyCategoryDisplay = company?.details?.originalDigitalCategory
     ? (Array.isArray(company.details.originalDigitalCategory) ? company.details.originalDigitalCategory.join(', ') : company.details.originalDigitalCategory)

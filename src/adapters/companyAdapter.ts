@@ -1,3 +1,4 @@
+// src/adapters/companyAdapter.ts
 export interface ApiCompany {
   documentId: string;      // NEW
   name: string;
@@ -67,16 +68,27 @@ export interface Company {
   };
 }
 
-export const adaptCompany = (raw: ApiCompany): Company => {
+export const adaptCompany = (raw: ApiCompany | null): Company | null => {
+  if (!raw) {
+    console.error("adaptCompany received null raw data");
+    return null; // Or throw an error, or return a default Company structure
+  }
+
   const { name, subheading, logo, detail } = raw;
 
+  // Ensure documentId is a string and not undefined/null before using it.
+  // The primary fix (fetching documentId in GET_ALL_COMPANIES) should prevent this,
+  // but this makes the adapter more robust.
+  const companyId = String(raw.documentId ?? detail?.id ?? name ?? Math.random().toString());
+
+
   return {
-    id: raw.documentId, // use detail.id or fallback to name
-    name,
-    subheading,
-    logo,
+    id: companyId,
+    name: name ?? 'Unnamed Company',
+    subheading: subheading ?? '',
+    logo: logo ?? '',
     details: {
-      id: raw.documentId ?? raw.detail?.id ?? raw.name,
+      id: companyId, // Use the same derived companyId
       overview: detail?.overview ?? '',
       regions: detail?.region ?? [],
       risksTreatedOriginal: detail?.risksTreatedOriginal ?? [],
@@ -100,5 +112,5 @@ export const adaptCompany = (raw: ApiCompany): Company => {
   };
 };
 
-export const adaptCompanies = (items: ApiCompany[]): Company[] =>
-  items.map(adaptCompany);
+export const adaptCompanies = (items: (ApiCompany | null)[]): Company[] =>
+  items.map(item => adaptCompany(item)).filter(Boolean) as Company[]; // Filter out any nulls if adaptCompany can return null
