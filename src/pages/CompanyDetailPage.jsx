@@ -35,7 +35,7 @@ export default function CompanyDetailPage() {
           setLoading(false);
         });
     }
-  }, [id]); // The fix is here: changed documentId to id
+  }, [id]); 
 
   const companyCategoryDisplay = company?.details?.originalDigitalCategory
     ? (Array.isArray(company.details.originalDigitalCategory) ? company.details.originalDigitalCategory.join(', ') : company.details.originalDigitalCategory)
@@ -47,7 +47,7 @@ export default function CompanyDetailPage() {
   else if (keySolutionsCount === 2) keySolutionsGridCols = "lg:grid-cols-2";
   else if (keySolutionsCount === 1) keySolutionsGridCols = "lg:grid-cols-1";
 
-  const companyWebsite = company?.details?.website || "#"; // Assuming 'website' might be in details
+  const companyWebsite = company?.website || "#"; // MODIFIED HERE
 
   if (loading) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl font-semibold text-slate-700 ">Loading...</p></div>;
   if (error) return <div className="min-h-screen flex justify-center items-center bg-gray-50 py-10"><p className="text-xl text-red-600 font-semibold ">{error}</p></div>;
@@ -67,7 +67,7 @@ export default function CompanyDetailPage() {
             />
             <div className="pt-1 flex-grow">
               <motion.a
-                href={companyWebsite}
+                href={companyWebsite} // Uses the updated companyWebsite variable
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-baseline group no-underline mb-1"

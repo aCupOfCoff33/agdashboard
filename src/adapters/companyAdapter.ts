@@ -4,6 +4,7 @@ export interface ApiCompany {
   name: string;
   subheading: string;
   logo: string;
+  website: string
   detail: {
     id: string;
     overview?: string;
@@ -47,6 +48,7 @@ export interface Company {
   name: string;
   subheading: string;
   logo: string;
+  website: string;
   details: {
     id: string;
     overview: string;
@@ -74,7 +76,7 @@ export const adaptCompany = (raw: ApiCompany | null): Company | null => {
     return null; // Or throw an error, or return a default Company structure
   }
 
-  const { name, subheading, logo, detail } = raw;
+  const { name, subheading, logo, website, detail } = raw;
 
   // Ensure documentId is a string and not undefined/null before using it.
   // The primary fix (fetching documentId in GET_ALL_COMPANIES) should prevent this,
@@ -87,6 +89,7 @@ export const adaptCompany = (raw: ApiCompany | null): Company | null => {
     name: name ?? 'Unnamed Company',
     subheading: subheading ?? '',
     logo: logo ?? '',
+    website: website ?? '',
     details: {
       id: companyId, // Use the same derived companyId
       overview: detail?.overview ?? '',

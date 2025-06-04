@@ -8,6 +8,7 @@ export const GET_ALL_COMPANIES = gql`
       name
       subheading
       logo
+      website
       detail {
         id
         overview
@@ -55,6 +56,7 @@ export const GET_COMPANY_BY_ID = gql`
       name
       subheading
       logo
+      website
       detail {
         id
         overview

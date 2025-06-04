@@ -1,11 +1,11 @@
 import axios from "axios";
-import { companies } from "./companyData.js";
+import { companies } from "./backupData.js";
 
 const API_URL = "http://localhost:1337/api/companies";
-const TOKEN = process.env.STRAPIAPI;
+const TOKEN = "stuff"; // Replace with your actual authentication token
 
 const transformCompany = (raw) => {
-  const { id, details, ...rest } = raw;
+  const { id, details, company, ...rest } = raw;
 
   return {
     ...rest,
