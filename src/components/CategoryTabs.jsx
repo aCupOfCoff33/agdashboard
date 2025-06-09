@@ -1,7 +1,11 @@
+// src/components/CategoryTabs.jsx
 import { SlidersHorizontal } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CategoryTabs({ categoryType, setCategoryType, showFilters, setShowFilters }) {
+  // Determine the background color class based on categoryType
+  const pillBgClass = categoryType === "tech" ? "bg-blue-300" : "bg-green-300";
+
   return (
     <div className="flex items-center gap-4 w-full">
       <button
@@ -14,7 +18,7 @@ export default function CategoryTabs({ categoryType, setCategoryType, showFilter
 
       <div className="flex flex-grow h-18 sm:h-12 rounded-full bg-gray-100 relative overflow-hidden">
         <motion.div
-          className="absolute top-1.5 bottom-1.5 rounded-full bg-white shadow-md"
+          className={`absolute top-1.5 bottom-1.5 rounded-full shadow-md ${pillBgClass}`}
           layout
           layoutId="categoryTab"
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
