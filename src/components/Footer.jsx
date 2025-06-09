@@ -21,12 +21,6 @@ export default function Footer() {
             <Link to="/" className="hover:text-primary-700">
               Home
             </Link>
-            <Link to="/about" className="hover:text-primary-700">
-              About
-            </Link>
-            <Link to="/contact" className="hover:text-primary-700">
-              Contact
-            </Link>
           </div>
         </div>
       </Container>
