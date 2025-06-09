@@ -1,8 +1,7 @@
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";        // ← NEW
+import { Link } from "react-router-dom"; 
 import logo from "../assets/logo.png";
-import profile from "../assets/profile.png";
 import Container from "./Container.jsx";
 
 export default function Navbar() {
@@ -10,8 +9,6 @@ export default function Navbar() {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -40,13 +37,8 @@ export default function Navbar() {
         {/* spacer pushes profile to far right */}
         <div className="flex-1" />
 
-        {/* right group: profile + hamburger */}
+        {/* right group: hamburger menu */}
         <div className="flex items-center space-x-4">
-          <img
-            src={profile}
-            alt="Profile"
-            className="h-9 w-9 rounded-full object-cover"
-          />
           <button
             className="md:hidden"
             aria-label="Toggle navigation"
