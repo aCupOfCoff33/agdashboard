@@ -16,14 +16,13 @@ interface InternalCard {
   employeeCount?: string;
   regions?: string[];
   overview: string;
-  originalCompanyData: Company;
+  originalCompanyData: Company; 
 }
 
 interface ExpandableCardGridProps {
   companies: Company[];
 }
 
-// Consistent layout transition for all animations
 const layoutTransition = {
   type: "spring",
   stiffness: 400,
@@ -31,7 +30,6 @@ const layoutTransition = {
   mass: 0.8,
 };
 
-// Smooth fade transitions for content that doesn't need layout animation
 const fadeTransition = {
   duration: 0.2,
   ease: "easeOut",
@@ -81,11 +79,11 @@ export default function ExpandableCardGrid({
   });
 
   const displayCards: InternalCard[] = companies.map((company) => ({
-    id: company.id.toString(),
+    id: String(company.id ?? Math.random().toString()), 
     title: company.name,
     description: company.subheading,
     src: company.logo || "https://via.placeholder.com/150x150.png?text=No+Logo",
-    overview: company.details.aboutCompanyText || '',
+    overview: company.details.aboutCompanyText || "",
     employeeCount: company.details.employeeCount,
     regions: company.details.regions,
     originalCompanyData: company,
@@ -157,14 +155,12 @@ export default function ExpandableCardGrid({
 
                 <div className="flex-grow min-w-0">
                   <motion.a
-                    href="#" // Placeholder: Replace with company.details.website if available
+                    href={active.originalCompanyData.website || "#"} //MODIFIED HERE
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-baseline group no-underline" // Added no-underline to prevent default browser underline on <a>
+                    className="flex items-baseline group no-underline" 
                     initial="rest"
                     whileHover="hovered"
-                    // If you had a company website URL, you could use:
-                    // href={active.originalCompanyData.details.website || "#"}
                   >
                     <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-slate-700 group-hover:underline transition-colors duration-200">
                       {active.title}
@@ -241,11 +237,11 @@ export default function ExpandableCardGrid({
                     className="mt-6 pt-6 border-t border-gray-200 flex justify-center"
                   >
                     <Link
-                      to={`/company/${active.originalCompanyData.id}`}
+                      to={`/company/${active.id}`} 
+                      onClick={handleClose}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={handleClose}
-                      className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors shadow-sm hover:shadow-lg"
+                      className="inline-flex items-center px-6 py-3 bg-slate-800 text-white font-semibold text-sm rounded-lg shadow-md hover:bg-slate-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2" // Example styling, adjust as needed
                     >
                       Learn More
                       <ArrowRight size={16} className="ml-2 -mr-1" />

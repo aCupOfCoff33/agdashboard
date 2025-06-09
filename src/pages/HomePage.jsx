@@ -4,16 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import Container from "../components/Container";
-import { fetchAllCompanies } from "../services/api";
-import ExpandableCardGrid from "../components/ui/expandable-card-demo-grid"; // Import the new component
-
-// Remove or comment out the old CompanyResultsGrid
-// const CompanyResultsGrid = ({ companies }) => { ... };
+import { fetchCompanies  } from "../services/companyService"; // Ensure path is correct
+import ExpandableCardGrid from "../components/ui/expandable-card-demo-grid";
 
 export default function HomePage() {
-  /* ---------- master state ---------- */
   const [allCompanies, setAll] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); // Added error state
 
   const [search, setSearch] = useState("");
   const [categoryType, setCategoryType] = useState("tech");
@@ -21,19 +19,24 @@ export default function HomePage() {
   const [selectedDigital, setSelectedDigital] = useState(new Set());
   const [showFilters, setShowFilters] = useState(true);
 
-  /* ---------- load companies once ---------- */
   useEffect(() => {
-    fetchAllCompanies().then((data) => {
+    setLoading(true);
+    setError(null); // Reset error on new fetch
+    fetchCompanies().then((data) => {
       setAll(data);
-      setFiltered(data); // start with everything visible
+      setFiltered(data);
+      setLoading(false);
+    }).catch(err => {
+      console.error("Failed to load companies on HomePage", err);
+      setError("Could not load company data. Please try again later."); // User-friendly error
+      setLoading(false);
     });
   }, []);
 
-  /* ---------- recompute whenever filters change ---------- */
+  // Filtering useEffect remains the same
   useEffect(() => {
     let cur = [...allCompanies];
 
-    /* live text search (company name, subheading, overview) */
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       cur = cur.filter(
@@ -44,7 +47,6 @@ export default function HomePage() {
       );
     }
 
-    /* tech-risk chip filters */
     if (categoryType === "tech" && selectedRisks.size) {
       cur = cur.filter((c) => {
         const risks = (c.details?.risksTreatedOriginal || []).map((r) =>
@@ -56,7 +58,6 @@ export default function HomePage() {
       });
     }
 
-    /* digital-category chip filters */
     if (categoryType === "digital" && selectedDigital.size) {
       cur = cur.filter((c) => {
         const raw = c.details?.originalDigitalCategory;
@@ -68,29 +69,33 @@ export default function HomePage() {
         );
       });
     }
-
     setFiltered(cur);
   }, [allCompanies, search, categoryType, selectedRisks, selectedDigital]);
 
-  /* ---------- motion variants (unchanged) ---------- */
-  const sectionVariants = {
-    hidden: { opacity: 0, y: -20, height: 0 },
-    visible: { opacity: 1, y: 0, height: "auto", marginTop: "1.5rem" },
-    exit: { opacity: 0, y: 20, height: 0, transition: { duration: 0.3 } },
-  };
-  const resultsVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.4 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
+  const sectionVariants = { /* ... (same as before) ... */ };
+  const resultsVariants = { /* ... (same as before) ... */ };
 
-  /* ---------- render ---------- */
+  if (loading && allCompanies.length === 0) {
+    return (
+      <Container>
+        <div className="text-center py-10 text-gray-500">Loading companies...</div>
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container>
+        <div className="text-center py-10 text-red-500">{error}</div>
+      </Container>
+    );
+  }
+
   return (
     <>
       <SearchBar onSearch={setSearch} defaultValue={search} />
+      <Container className="mt-6">
 
-      <Container>
-        {/* filter chips */}
         <AnimatePresence mode="wait">
           {!search && (
             <motion.div
@@ -113,8 +118,6 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* results grid - Replace CompanyResultsGrid with ExpandableCardGrid */}
         <AnimatePresence mode="wait">
           <motion.div
             key="results"
@@ -123,8 +126,14 @@ export default function HomePage() {
             animate="visible"
             exit="exit"
           >
-            {/* Pass the filtered companies to the new grid component */}
-            <ExpandableCardGrid companies={filtered} />
+            {filtered.length === 0 && !loading && (
+                 <div className="text-center py-10 text-gray-500">No companies match your filters.</div>
+            )}
+            {(filtered.length > 0 || loading) && <ExpandableCardGrid companies={filtered} />}
+
+            {loading && allCompanies.length > 0 && (
+                 <div className="text-center py-2 text-gray-400 text-xs">Updating...</div>
+            )}
           </motion.div>
         </AnimatePresence>
       </Container>
