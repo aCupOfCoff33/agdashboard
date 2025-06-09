@@ -16,7 +16,6 @@ import { ICONS } from "../FilterButtons"; // Import ICONS from FilterButtons
 //   matchingActiveFilterLabels?: string[];
 // }
 
-
 interface InternalCard {
   id: string;
   description: string;
@@ -33,7 +32,6 @@ interface ExpandableCardGridProps {
   // Ensure Company type used here includes matchingActiveFilterLabels
   companies: (Company & { matchingActiveFilterLabels?: string[] })[];
 }
-
 
 const modalFadeAndScaleTransition = {
   type: "spring",
@@ -92,7 +90,8 @@ export default function ExpandableCardGrid({
     title: company.name,
     description: company.subheading,
     src: company.logo || "https://via.placeholder.com/150x150.png?text=No+Logo",
-    overview: company.details?.aboutCompanyText || company.details?.overview || "",
+    overview:
+      company.details?.aboutCompanyText || company.details?.overview || "",
     employeeCount: company.details?.employeeCount,
     regions: company.details?.regions,
     originalCompanyData: company,
@@ -198,10 +197,14 @@ export default function ExpandableCardGrid({
                       className="mt-3 text-xs text-gray-500 space-y-0.5"
                     >
                       {active.employeeCount && (
-                        <p><strong>Employees:</strong> {active.employeeCount}</p>
+                        <p>
+                          <strong>Employees:</strong> {active.employeeCount}
+                        </p>
                       )}
                       {active.regions && active.regions.length > 0 && (
-                        <p><strong>Regions:</strong> {active.regions.join(", ")}</p>
+                        <p>
+                          <strong>Regions:</strong> {active.regions.join(", ")}
+                        </p>
                       )}
                     </motion.div>
                   )}
@@ -222,7 +225,9 @@ export default function ExpandableCardGrid({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15, duration: 0.2 }}
                 >
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">Overview</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
+                    Overview
+                  </h4>
                   <div className="text-sm text-gray-700 leading-relaxed prose prose-sm max-w-none mb-6">
                     {active.overview}
                   </div>
@@ -258,7 +263,7 @@ export default function ExpandableCardGrid({
             onClick={() => !isClosing && setActive(card)}
             className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col overflow-hidden relative" // Added relative
             style={{
-              height: 160,
+              height: 190,
               opacity: active && active.id === card.id ? 0.3 : 1,
               pointerEvents: isClosing ? "none" : "auto",
             }}
@@ -267,31 +272,40 @@ export default function ExpandableCardGrid({
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             {/* --- ICONS DISPLAY --- */}
-            {card.matchingActiveFilterLabels && card.matchingActiveFilterLabels.length > 0 && (
-              <div className="absolute top-1.5 right-1.5 flex flex-row-reverse space-x-1 space-x-reverse z-10">
-                <AnimatePresence>
-                  {card.matchingActiveFilterLabels.map((label, index) => {
-                    // Check if label is a valid key in ICONS
-                    const IconComponent = label in ICONS ? ICONS[label as keyof typeof ICONS] : null;
-                    if (!IconComponent) return null;
-                    return (
-                      <motion.div
-                        key={`${label}-${index}`}
-                        initial={{ opacity: 0, scale: 0.5, x: 10 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        exit={{ opacity: 0, scale: 0.5, x: 10 }}
-                        transition={{ duration: 0.20, delay: index * 0.05, ease: "easeOut" }}
-                        className="p-1 bg-white/70 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center ring-1 ring-gray-200/50"
-                        style={{ width: '26px', height: '26px' }} // Increased size
-                        title={label}
-                      >
-                        <IconComponent className="w-[14px] h-[14px] text-black" /> {/* Bigger, black icon */}
-                      </motion.div>
-                    );
-                  })}
-                </AnimatePresence>
-              </div>
-            )}
+            {card.matchingActiveFilterLabels &&
+              card.matchingActiveFilterLabels.length > 0 && (
+                <div className="absolute top-1.5 right-1.5 flex flex-row-reverse space-x-1 space-x-reverse z-10">
+                  <AnimatePresence>
+                    {card.matchingActiveFilterLabels.map((label, index) => {
+                      // Check if label is a valid key in ICONS
+                      const IconComponent =
+                        label in ICONS
+                          ? ICONS[label as keyof typeof ICONS]
+                          : null;
+                      if (!IconComponent) return null;
+                      return (
+                        <motion.div
+                          key={`${label}-${index}`}
+                          initial={{ opacity: 0, scale: 0.5, x: 10 }}
+                          animate={{ opacity: 1, scale: 1, x: 0 }}
+                          exit={{ opacity: 0, scale: 0.5, x: 10 }}
+                          transition={{
+                            duration: 0.2,
+                            delay: index * 0.05,
+                            ease: "easeOut",
+                          }}
+                          className="p-1 bg-white/70 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center ring-1 ring-gray-200/50"
+                          style={{ width: "26px", height: "26px" }} // Increased size
+                          title={label}
+                        >
+                          <IconComponent className="w-[14px] h-[14px] text-black" />{" "}
+                          {/* Bigger, black icon */}
+                        </motion.div>
+                      );
+                    })}
+                  </AnimatePresence>
+                </div>
+              )}
             {/* --- END ICONS DISPLAY --- */}
 
             <div className="p-4 flex flex-col items-center text-center flex-grow justify-center">
@@ -310,9 +324,14 @@ export default function ExpandableCardGrid({
                 <h3
                   className="font-semibold text-sm text-gray-800 text-center leading-tight"
                   style={{
-                    display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-                    overflow: "hidden", textOverflow: "ellipsis",
-                    minHeight: "2.5em", maxHeight: "2.5em", maxWidth: "100%",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    minHeight: "2.5em",
+                    maxHeight: "2.5em",
+                    maxWidth: "100%",
                   }}
                 >
                   {card.title}
@@ -320,9 +339,14 @@ export default function ExpandableCardGrid({
                 <p
                   className="text-xs text-gray-500 mt-1 text-center leading-tight"
                   style={{
-                    display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-                    overflow: "hidden", textOverflow: "ellipsis",
-                    minHeight: "2.2em", maxHeight: "2.2em", maxWidth: "100%",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    minHeight: "2.5em",
+                    maxHeight: "2.5em",
+                    maxWidth: "100%", // <<< CORRECTED
                   }}
                 >
                   {card.description}
