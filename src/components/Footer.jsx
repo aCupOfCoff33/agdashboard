@@ -28,19 +28,6 @@ export default function Footer() {
               Contact
             </Link>
           </div>
-
-          {/* Credit */}
-          <p className="text-xs sm:text-sm font-medium text-center sm:text-right">
-            Designed & built by{" "}
-            <a
-              href="https://www.aaryanj.tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-700 underline"
-            >
-              Aaryan Joharapurkar
-            </a>
-          </p>
         </div>
       </Container>
     </footer>
