@@ -5,6 +5,7 @@ export const companies = [
     subheading: "Smart water monitoring for property protection.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGejiDJOS62zg/company-logo_200_200/company-logo_200_200/0/1719945615754/alert_labs_inc__logo?e=1753920000&v=beta&t=Jy31TM9WQDjeeLsXOFbM6iAtFJXaHpx451GJePrRPc0",
     categoryId: 7,
+    website: "https://www.alertlabs.com/",
     details: {
       overview: "Alert Labs' mission is to protect company assets, reduce operating costs, and enhance sustainability in buildings. They design, manufacture, distribute, and support smart building sensors (to monitor water leaks, water pressure, temperature, and humidity) and automatic shutoff valves. Their AlertAQ platform analyzes over 6.7 billion gallons of water each year, saving customers more than $20 million, and reducing CO2e emissions by over 80 million pounds. The company also aims for sustainability in its operations and is a certified B Corporation.",
       regions: ["US", "Canada"],
@@ -45,6 +46,7 @@ export const companies = [
     subheading: "AI for infrastructure risk and optimization.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQG_iz-mvSlMlQ/company-logo_200_200/company-logo_200_200/0/1630543101240/aren_logo?e=1753920000&v=beta&t=aJHYQUjTD2cUKKGGOqMAdgXg6zZ2pbpoaAQtqFM77bo",
     categoryId: 2,
+    website: "https://www.aren.ai/",
     details: {
       overview: "Aren is a B2B SaaS platform designed for engineering firms and asset owners, aiming to reduce the risk of infrastructure failure and optimize spending. Their platform merges artificial intelligence with civil engineering to analyze raw data from diverse sources—including images, videos, laser scanners, and sensors—to conduct a thorough examination of structures. The technology identifies and precisely measures cracks, as well as tracks their rate of change over time in critical materials used across bridges, roads, dams, and buildings. This process produces a 3D visualization that not only details the current state of the infrastructure but also chronicles its condition over time, providing insights into its structural integrity.",
       regions: ["US", "Canada", "Europe", "Asia", "UK&I", "LATAM", "Pacific"],
@@ -83,6 +85,7 @@ export const companies = [
     subheading: "IoT-driven job site monitoring and automation.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQE0ofbs9ANVzA/company-logo_200_200/company-logo_200_200/0/1642793315661/brickeye_logo?e=1753920000&v=beta&t=ROkmeRTav8EM9P5MJbLRxiL1LiVIGW_3OkEjonhJZxE",
     categoryId: 7,
+    website: "https://www.brickeye.com/",
     details: {
       overview: "Brickeye aims to transform the AEC industry with IoT-driven job site monitoring, intelligent automations, and data analytics. They offer a unified IoT technology solution for construction which consolidates it's in-house IoT hardware solutions into one risk mitigation platform. Brickeye has IoT devices that are built around water mitigation, concrete curing, and environmental risk management. This digital connectivity provides general contractors with jobsite insights, encompassing real-time alerts and intelligent risk management tools, all accessible remotely via a cloud app or dashboard.",
       regions: ["US", "Canada", "Europe", "LATAM", "UK&I", "Asia"],
@@ -122,6 +125,7 @@ export const companies = [
     subheading: "Labor risk analytics for construction projects.",
     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHvyL67ZTNruw/company-logo_200_200/B4DZWljqF9G4AQ-/0/1742239343436/myclma_logo?e=1753920000&v=beta&t=bbmy9GrGU8uXc1Or9O1vW8l2tqkpCJwU5PQxIlR-G4U",
     categoryId: 5,
+    website: "https://www.myclma.com/",
     details: {
       overview: "Construction Industry Resources (CIR) is a company that specializes in managing labor risks within the construction sector. Founded and led by CEO Daniel Groves, CIR is closely aligned with the Construction Users Roundtable (CURT), an organization that assists construction owners in effectively using capital. CIR's primary focus is on skilled labor challenges in the construction industry, offering solutions for preconstruction planning to mitigate these risks. Their main tool, the Construction Labor Market Analyzer (CLMA), is a sophisticated platform providing detailed risk analytics. It leverages data from various sources, including construction owners, contractors, labor providers, and Dodge Data & Analytics. The CLMA allows users to understand labor availability by trade & location and what the risk of labor is for future projects, thus aiding in better planning and decision-making within the client's pipeline. This technology is not only valuable for construction companies but also beneficial for labor unions and the insurance industry. It helps in improving loss ratios by providing accurate data for underwriting premiums. CIR's approach involves assessing the labor market in detail, understanding both current and future supply and demand, and planning for potential gaps. By utilizing CIR's tools and methodologies, companies can make informed decisions about project timelines, budgeting, and labor utilization, effectively minimizing labor-related risks and ensuring the successful completion of construction projects.",
       regions: ["US"],
@@ -160,6 +164,7 @@ export const companies = [
     subheading: "Subcontractor prequalification and risk management.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQE9hdnz0eECeQ/company-logo_200_200/B56ZX.5SJQGoAM-/0/1743738185098/bespoke_metrics_inc_logo?e=1753920000&v=beta&t=qMPLc-kjmLz4F7gX98mvSjaQYhSfyn3FKRZdO8IRR3M",
     categoryId: 5,
+    website: "https://www.bespokemetrics.com/compass",
     details: {
       overview: "Compass by Bespoke Metrics is a leading prequalification platform that supports data collection, verification, and analytics across the entire construction supply chain. Unique to Compass, Subcontractor information is collected through their standard 1Form. General contractors receive data driven analytics to support decision making to mitigate project and default risk. The platform aims to provide transparency and insights into the capabilities and reliability of subcontractors, which can be crucial for general contractors and project owners. They typically aggregate data from multiple sources to provide a comprehensive view of subcontractors. This can include financial data, past performance records, safety metrics, and other relevant information. Using proprietary algorithms, the platform can then assess, and rank subcontractors based on their risk profile.",
       regions: ["Canada", "US"],
@@ -198,6 +203,7 @@ export const companies = [
     subheading: "Cognitive impairment detection for worker safety.",
     logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFMB5sm0Gl5cQ/company-logo_200_200/company-logo_200_200/0/1694442141079/impairmentscience_logo?e=1753920000&v=beta&t=1CPq-ncAE-YxZzTx7Qttieu3YabnPbfp8ivCwXLcgpo",
     categoryId: 5,
+    website: "https://www.druidapp.com/",
     details: {
       overview: "Leveraging neuroscience, Druid quickly (in just 1 minute) and accurately detect cognitive and psychomotor impairments stemming from various causes, such as drugs, alcohol, fatigue, illnesses, injuries, chronic ailments, or intense emotional stress. Druid's main application is to evaluate the job readiness of employees and contractors, enhancing productivity and minimizing injury-related costs. Assessments in the app include tasks that evaluate reaction time, decision making, hand-eye coordination, balance, and time estimation. The results can then be used to gauge the level of a person's impairment.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -236,6 +242,7 @@ export const companies = [
     subheading: "Non-intrusive subsurface mapping platform.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFJgzPcKb3VbQ/company-logo_200_200/company-logo_200_200/0/1633337594950?e=1753920000&v=beta&t=edNFS2SemzOenO4sSqCIJBsrNrYgk4DQXr_Gq_9D6Vg",
     categoryId: 2,
+    website: "https://www.exodigo.com/",
     details: {
       overview: "Exodigo engages in non-invasive subsurface exploration. It uses a fusion of advanced sensors, 3D imaging, and Al to offer a comprehensive view of what lies beneath, providing vital information to ensure safe and confident design and construction. The solution harnesses an Al combined with multi-sensor technology to craft a comprehensive underground map. Their method integrates data sensors in electromagnetics, gravitation, light, ground penetrating radar (GDR), lidar, and seismic, offering an undisturbed, clear underground view. With this detailed underground insight, their customers can confidently and safely plan, design, and implement their capital projects.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -274,6 +281,7 @@ export const companies = [
     subheading: "AI-driven pre-construction risk analysis.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGVQynaS2d-5w/company-logo_200_200/company-logo_200_200/0/1714499520640/firmusai_logo?e=1753920000&v=beta&t=-Q55LPRzaEhgZrsKNlxASEdfoyp2SbjJ2gNVNMEVR34",
     categoryId: 6,
+    website: "https://www.firmus.ai/",
     details: {
       overview: "Firmus helps preconstruction teams to reduce risks at the outset of projects and submit more precise bids. Using its Al algorithms, Firmus autonomously scrutinizes PDF drawing sets, pinpoints design-related risks, and enhances pre-construction decision-making. They ensure a thorough design review, addressing crucial architectural, MEP, and document health concerns within a 72-hour period. When done manually, such assessments could take pre-construction teams between 2-4 weeks. Through its cloud-based interface, Firmus equips customers with the tools to swiftly generate insights, raise RFIs, and foster effective communication within their teams, thereby enhancing collaboration with all project stakeholders.",
       regions: ["US", "Canada"],
@@ -312,6 +320,7 @@ export const companies = [
     subheading: "Integrated project controls platform.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQFb5AGiodlT1g/company-logo_200_200/company-logo_200_200/0/1727778248256/ineight_logo?e=1753920000&v=beta&t=H6pFkqWy2pBukSfmRePYmk0KWrQt7hn1fPIWmBcL5oM",
     categoryId: 1,
+    website: "https://www.ineight.com/",
     details: {
       overview: "InEight's project management software offers real-time insights for risk management, operational efficiency, and cost control, with features for planning, execution, cost estimation, and forecasting. The platform includes tools for top-down planning, schedule and cost risk analysis, and design progress tracking. Additionally, it ensures environment, health, and safety compliance, and facilitates quality assurance and control. The software also streamlines field execution management, document workflows, and contract management. Its analytics capabilities reduce data analysis time, improve portfolio visibility, and support informed decision-making. InEight's virtual design and construction tools aid in clash resolution, leveraging digital twins and model-based technologies for efficient project management across various construction stages.",
       regions: ["US", "Canada", "UK&I", "Europe", "Asia", "Pacific"],
@@ -352,6 +361,7 @@ export const companies = [
     subheading: "Scalable IoT solutions for industrial operations.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGrBtD-gTOw1Q/company-logo_200_200/company-logo_200_200/0/1686259345530/latium_group_of_companies_logo?e=1753920000&v=beta&t=OhjDGKjSsLFqoV4w851ED9nOFor0lQHU5LpE-bAUnVw",
     categoryId: 7,
+    website: "https://www.latiumtech.com/",
     details: {
       overview: "Latium Technologies offers a scalable suite of IoT and industrial solutions, designed to help businesses optimize their operations and increase efficiency. Their technology solutions include IoT (Internet of Things) sensors, cloud computing, and analytics platforms. These technologies collect vast amounts of data from vehicles and assets, which is then processed and presented in user-friendly dashboards and reports. The goal is to give managers and operators actionable insights into their operations. Latium has a wide array of sensors including Air Quality monitoring, Asset Tracking, Concrete Maturity, Leak Detection, Vibration, Temperature and Humidity.",
       regions: ["Canada", "US", "Europe", "UK&I", "Asia", "Pacific", "LATAM"],
@@ -390,6 +400,7 @@ export const companies = [
     subheading: "Flexible flood protection barriers.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEGtD46n7I2vw/company-logo_200_200/company-logo_200_200/0/1630550552663/megasecur_inc_logo?e=1753920000&v=beta&t=gzO6rgr-fxncULvdX2GOckbYtV9TJfHfYD6YyD3EvK8",
     categoryId: 3,
+    website: "https://www.megasecur.com/",
     details: {
       overview: "MegaSecur manufactures a Water-Gate barrier, which is a flexible and self-locking water barrier which can be used for flood protection, water retention, and diversions. The Water-Gate barrier is known for its portability, ease of deployment, and effectiveness in various scenarios. It uses a unique design that relies on the weight of the water to keep the barrier in place. As water fills the barrier, it becomes more secure, preventing any overflow or leakage. Made from strong, durable materials, its designed to withstand wear and tear and its flexibility allows for adaptation to various terrains and conditions.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -428,6 +439,7 @@ export const companies = [
     subheading: "Digital platform for construction communication & training.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGJTJT5bNaaDw/company-logo_200_200/company-logo_200_200/0/1695215671095/mindforgellc_logo?e=1753920000&v=beta&t=nl3yJCUVO9zwGTfroKK2DY3l21BIZVBsTHRslrG_eI0",
     categoryId: 5,
+    website: "https://www.mindforge.io/",
     details: {
       overview: "MindForge offers a digital platform dedicated to enhancing communication, training, and engagement. Acknowledging the persistent challenges that plague the construction realm, such as worker safety concerns, project efficiency, and employee engagement issues, MindForge commits to addressing and mitigating these concerns through its comprehensive platform. They offer a unified platform with various tools and features tailored for the construction industry that includes training modules, communication tools, and engagement solutions. MindForge leverages technology to bring a digital solution to the construction site. Using a cloud-based platform, they provide access to their suite of tools on various devices, considering the on-the-go nature of many construction workers. Their solutions are tailored specifically to the challenges and needs of the construction industry, making them relevant and effective.",
       regions: ["USA"],
@@ -466,6 +478,7 @@ export const companies = [
     subheading: "AI-powered resilience solutions for natural disasters.",
     logo: "https://media.licdn.com/dms/image/v2/C560BAQGaaZsAaQVYCg/company-logo_200_200/company-logo_200_200/0/1630657782036/oneconcern_logo?e=1753920000&v=beta&t=Mr2htVDjd1vhaB85KjUVmeyOR9Z8Z61HSDuqavgXa0Q",
     categoryId: 3,
+    website: "https://www.oneconcern.com/",
     details: {
       overview: "One Concern is a tech company focused on building resilience solutions by harnessing the power of artificial intelligence (AI). Founded by Stanford University alumni, the company aims to make disaster-resilient communities a reality by predicting and mitigating the impacts of natural disasters. They provide a resilience-as-a-service solution that utilizes Al to predict and analyze the impacts of various natural disasters, such as: Seismic impacts, Flood, Climate events, and Fire. By providing this information, One Concern enables cities, businesses, and other entities to prepare and respond more effectively to natural disasters. One Concern uses artificial intelligence, big data analytics, and a wealth of geological, climatic, and urban data to predict the impacts of various natural disasters. Their platform ingests vast amounts of data from various sources, processes it using advanced Al algorithms, and produces predictive models that offer actionable insights.",
       regions: ["US", "Japan"],
@@ -504,6 +517,7 @@ export const companies = [
     subheading: "AI-powered 360° construction photo documentation.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGEQ2fZIICtUQ/company-logo_200_200/company-logo_200_200/0/1688566602003/openspaceai_logo?e=1753920000&v=beta&t=z6FVqfSP-JUNikdgCJ8GSlluW-oj5sfj5-eeF-q0OBc",
     categoryId: 2,
+    website: "https://www.openspace.ai/",
     details: {
       overview: "OpenSpace is a tech company that leverages computer vision and artificial intelligence to provide photo documentation solutions for the construction industry. By automatically capturing and mapping 360-degree photos to project plans, OpenSpace aims to create a visual record of construction progress over time. There primary offering is a visual documentation platform, which has several features: 360-degree wearable photo capture, automatic mapping, time-lapse creation, and integration with other construction software platforms. As workers walk the site with a camera (like a GoPro or similar device), photos are captured and then uploaded to the cloud. OpenSpace's algorithms process these photos, stitching them together and aligning them with the project plans. The result is an interactive, visual timeline of construction progress that stakeholders can navigate and analyze.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -542,6 +556,7 @@ export const companies = [
     subheading: "Visual command center for construction projects.",
     logo: "https://media.licdn.com/dms/image/v2/C4E0BAQGbsN5Y5TgrEg/company-logo_200_200/company-logo_200_200/0/1630576189963/reconstruct_inc_logo?e=1753920000&v=beta&t=e4SzieEaQwFZvmNvptDvAEAIFJ2S8WChLKWdwlXy78g",
     categoryId: 2,
+    website: "https://www.reconstruct.com/",
     details: {
       overview: "Reconstruct's Visual Command Center transforms all sources of reality data into a walkable, mappable, timestamped digital twin of the project. By ingesting data from any third-party device such as smart phones, 360 cameras, drones, or laser scanners, Reconstruct offers a capital asset lifecycle management (CALM) platform including complete virtual site visibility over time. ReConstruct has several features for construction project management including Visual Documentation by combining 3D models with reality capture, progress tracking, predictive analytics, remote Inspection, and integration with other construction software platforms. Their platform uses cloud computing to process and store large amounts of visual data. By leveraging artificial intelligence and advanced data analytics, the platform can automatically detect discrepancies between planned models and the actual construction, providing actionable insights to project managers and stakeholders. Users can access the platform via web browsers, in order to collaborate and share insights with team members and other stakeholders.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia"],
@@ -580,6 +595,7 @@ export const companies = [
     subheading: "Predictive analytics for supply chain risk.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEfNSHSzeWonw/company-logo_200_200/company-logo_200_200/0/1647870029262/everstreamai_logo?e=1753920000&v=beta&t=CY7K9aOKocBLVhHWWA6wkqVW_kP3HwvGzP454cFfL2U",
     categoryId: 5,
+    website: "https://www.everstream.ai/",
     details: {
       overview: "Everstream Analytics helps by providing an in-depth view of supply chain data, they offer more complete information, sharper analysis, and accurate predictions for supply chain operations. The platform amasses data from a varied mix of sources, such as news portals, meteorological predictions, social media, and proprietary DHL datasets. Through rigorous data analysis, they anticipate potential roadblocks and deliver actionable insights to their customers. Operating on a cloud-based framework, the system guarantees instantaneous collaboration and decision-making, enabling businesses to promptly counter any supply chain threats.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -618,6 +634,7 @@ export const companies = [
     subheading: "Live Dig Radar (LDR) for underground utility detection.",
     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHhrm3NdoTchg/company-logo_200_200/company-logo_200_200/0/1666250590787/rodradar_logo?e=1753920000&v=beta&t=-s9Nr6FCf99xZc32xZffvaVDLOBGwZASULY4Lxc85t8",
     categoryId: 7,
+    website: "https://www.rodradar.com/",
     details: {
       overview: "RodRadar offers its Live Dig Radar (LDR) technology, which automatically detects underground utility infrastructure in real-time, on location, without the need for expert analysis. Its product, LDR Excavate, an excavator digging bucket with integrated LDR technology, detects all types of pipes and utilities, including gas, power, communications, fiber-optics, water, oil, and chemicals - in different soils and types of substrates. The system works by having the driver use the digging bucket to scan a section of the ground, then being provided a visual mapping of underground utilities. LDR technology overcomes existing GPR limitations, detecting underground utilities during excavation at any depth.",
       regions: ["US", "Canada", "UK&I", "Europe", "Pacific"],
@@ -656,6 +673,7 @@ export const companies = [
     subheading: "Mobile-first operations platform for safety & quality.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQFMxR0B_JddtQ/company-logo_200_200/company-logo_200_200/0/1688336869599/safetyculturehq_logo?e=1753920000&v=beta&t=D-cZ4dmwiz7Wll5Y-vhc3WQPSyaFDnb85HmI3tHdJ8s",
     categoryId: 1,
+    website: "https://www.safetyculture.com/",
     details: {
       overview: "Safety Culture's customers use its solution by leveraging its mobile application and platform to conduct inspections, audits, and checks, digitizing traditional paper processes for efficiency. Frontline workers utilize the app for real-time incident reporting and issue notification, which promotes both proactive and reactive safety measures. Task management features enable users to assign and follow up on action items, ensuring that issues are resolved promptly. The platform also includes a training module for microlearning, which targets specific learning needs like reminding employees of protocols after an absence. Customers use the platform's data analytics to identify trends and areas for improvement, informing training and risk mitigation strategies. Additionally, Safety Culture's platform has a broad set of tools that integrate with APIs for additional functionalities like asset tracking and temperature monitoring. This allows businesses to monitor equipment and environmental conditions, further contributing to safety and compliance. The system's flexibility allows users to tailor the platform to their specific industry needs and operational challenges, helping them to manage risks effectively and streamline their safety processes.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -695,6 +713,7 @@ export const companies = [
     subheading: "Infra-intelligence platform for construction & procurement.",
     logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGza-OnfnzWrw/company-logo_200_200/company-logo_200_200/0/1684787388092/taiy_logo?e=1753920000&v=beta&t=wTNMDebgJy-EOqO5bif5dj8pWamks8E2bzWtNxhoSEQ",
     categoryId: 5,
+    website: "https://www.taiyo.al/",
     details: {
       overview: "Taiyō.Al is an advanced infra-intelligence platform designed to revolutionize the infrastructure construction and public procurement sector, which is often plagued by inefficiencies and high upfront costs. Utilizing a proprietary data mesh, it aggregates a vast array of specific fields to form intelligent analyses for early stage project decisions. This includes detailed information on infrastructure projects, tenders, brownfield assets, and risk conditions gathered from official government announcements, marketplace data, and real-time contract opportunities. By integrating external data on macro and micro activities, alongside news and media mentions, Taiyō.Al offers a comprehensive view of each project's landscape. This enables clients to incorporate their internal data, such as claims or bid data, to analyze alongside external information. The platform also provides insights into project failure rates, sector activities, key project sponsors, contractor performance, and risk analysis. It's equipped with tools for benchmarking and similar project analysis, crucial for decision-making. Taiyō.Al's real-time updates ensure the latest information is always at hand, significantly benefiting contractors and owners by improving visibility of opportunities, aiding in risk management, and enhancing decision-making in the largest yet most inefficient sector of the global economy.",
       regions: ["US", "Canada", "LATAM", "Europe", "Asia", "Pacific", "UK&I"],
@@ -733,6 +752,7 @@ export const companies = [
     subheading: "Weather and climate intelligence platform.",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQGUEur2TiCkNQ/company-logo_200_200/company-logo_200_200/0/1719954817874/tomorrow_io_logo?e=1753920000&v=beta&t=mv1HIVsWBTXGFz-R01Vuz8NTxaMwkJM9ZlwkgH2XUU8",
     categoryId: 3,
+    website: "https://www.tomorrow.io/",
     details: {
       overview: "Tomorrow.io is a weather intelligence and climate adaptation platform. From early warning systems to actionable insights, organizations can predict impact, mitigate risk, and ensure operational resilience with Tomorrow.io. They provide highly localized weather predictions that can cater to specific business needs on construction sites. Their proprietary technology merges data from various sources, including wireless communication networks, street cameras, satellites, traditional weather stations, and IoT devices. Using advanced data analytics and machine learning algorithms, they process this data to provide hyper-local weather predictions with higher accuracy than traditional methods. Additionally, Tommorrow.io offers protocols for various asset types, scopes of work and best practices that get pushed out when specific weather conditions are prevalent.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -771,6 +791,7 @@ export const companies = [
     subheading: "IoT platform for construction operations and safety.",
     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFM_fKFTuGanw/company-logo_200_200/company-logo_200_200/0/1719922235557/trusstor_logo?e=1753920000&v=beta&t=dlZ0KSafE5ZwAzUlcGNNMMlL-Yi2FcTAFriLYR7j7Bg",
     categoryId: 7,
+    website: "https://www.trusstor.com/",
     details: {
       overview: "Trusstor's construction operations platform combines zero-intrusion IoT technology with advanced oversight and reporting capabilities, transforming how construction sites are managed and monitored. The platform uses personal smart badges, location beacons, and equipment locators, integrating into the on-site environment to provide real-time insights. The personal smart badge and location beacons can work in unison to identify safety alerts such as tracking repeating patterns of workers to specific areas, enhancing workflow optimization. The system can also alert the worker if they are entering high risk zones based on their compliance certifications and training. Additionally, the technology identifies the exact floors where workers or equipment are located, aiding in precise site management for vertical builds. This data assists in time management and efficiency analysis, enabling managers to identify and address operational bottlenecks and streamline construction processes.",
       regions: ["US", "LATAM", "Canada", "UK&I", "Europe", "Asia", "Pacific"],
@@ -809,6 +830,7 @@ export const companies = [
     subheading: "Intelligent lifting solutions for cranes.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEubR-L7ZM6uw/company-logo_200_200/company-logo_200_200/0/1631355471437/vita_logo?e=1753920000&v=beta&t=dsRYGPJ0u7V2FIzfyRUxxPgH-y1UGikOIPPSj5YFSFA",
     categoryId: 7,
+    website: "https://www.vitainclinata.com/",
     details: {
       overview: "Vita's innovative technology empowers on-site teams, letting them lift more swiftly, streamline installation, and prioritize safety. They provide an intelligent lifting solution for cranes, amplifying the control, efficiency, and safety of load handling tasks. Their technology, the Vita Load Navigator (VLN) sits in between the crane hook and the load. The VLN uses jets to counteract the unpredictable effects of wind and weather, thereby minimizing delays. Furthermore, Vita emphasizes safety, allowing workers to operate at a safe distance and diminish reliance on taglines. They also offer precision autonomous lifting paths that can be programmed to save the crane operator time.",
       regions: ["US", "Canada", "UK&I", "Europe", "Asia", "Pacific", "LATAM"],
@@ -847,6 +869,7 @@ export const companies = [
     subheading: "Climate risk intelligence for infrastructure digital twins.",
     logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG3JBH7ufzfSg/company-logo_200_200/company-logo_200_200/0/1713269791108/climatwin_com_logo?e=1753920000&v=beta&t=aA2Q-7aOcs0K2BpHbnX1doMVq3reUldR6swxUlGJUjI",
     categoryId: 3,
+    website: "https://www.climatwin.com/",
     details: {
       overview: "ClimaTwin is a climate risk intelligence solution for infrastructure assets and the built environment. By connecting complex climate models and infrastructure digital twins, their solution enables owner-operators, investors, governments, and engineers to aggregate, visualize, and analyze disparate datasets, revealing site-specific insights at the hyper-local scale of assets. ClimaTwin aggregates physical infrastructure datasets with climate models to visualize and assess how the asset will perform under acute and chronic climate hazards. Customers can create an enhanced BIM-GIS digital twin for buildings and civil projects to simulate and identify vulnerabilities to weather variables. Their goal is to help customers adapt for climate resilience to assess the asset's lifecycle.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -885,6 +908,7 @@ export const companies = [
     subheading: "AI-powered water management and leak prevention.",
     logo: "https://media.licdn.com/dms/image/v2/C560BAQGeB00AMYpTjA/company-logo_200_200/company-logo_200_200/0/1630590555436/wintwi_logo?e=1753920000&v=beta&t=etzNFi7LIzPer0-4j3LDKOcmi8rwV5ihyd1VHM1STCo",
     categoryId: 7,
+    website: "https://www.wint.ai/",
     details: {
       overview: "Wint water management system detects and stops leaks at the source using Artificial Intelligence. It alerts you when water is leaking and can automatically shut it off. Intelligent real-time monitoring identifies sources of leaks and wastewater preventing damage, reducing consumption, and cutting the resulting carbon emissions. Wint also integrates artificial intelligence with real-time water flow analytics; its devices are installed at water ingress points and main branches, where they analyze the flow and consumption patterns. The Al has been trained on vast amounts of data and can understand typical usage patterns. Any deviation from the norm, like a sudden spike in water usage, is flagged as a potential leak, leading to an alert being sent out. The system is cloud-connected, allowing for remote monitoring and control. The system is based on technology supporting water leak detection, water waste prevention, water flow analysis, and automatic shutoff.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],
@@ -923,6 +947,7 @@ export const companies = [
     subheading: "Workforce management and safety platform for construction.",
     logo: "https://media.licdn.com/dms/image/v2/C4E0BAQG6H9GxyFfYmw/company-logo_200_200/company-logo_200_200/0/1657655519937/ontarget_software_logo?e=1753920000&v=beta&t=MqZibxQFTXjp_JYzchnVa060kIipVtiUypq91yo9YdE",
     categoryId: 7,
+    website: "https://www.kwant.io/",
     details: {
       overview: "Kwant is a workforce management & safety platform built to accelerate construction through productivity and safety. Using smart wearables and plug-n-play sensors, Kwant connects jobsite data and provides real-time insights & actionable reports. They deploy smart badges and wearables that capture real-time data with minimal infrastructure and combine it with workforce data (skills, training, compliance, and safe alerts), project data (schedule, BIM, and production rate), and provide actionable insights. Using a proprietary algorithm, Kwant prioritizes high-risk operations, workers, activities, and zones for stakeholders to take proactive action. While leveraging these data points, Kwant delivers a suite of functionalities designed to optimize construction and industrial project outcomes which includes, real-time analytics, productivity tracking, safety monitoring, decision-making insights, and integrative capabilities.",
       regions: ["US", "Canada", "Europe", "Asia"],
@@ -961,6 +986,7 @@ export const companies = [
     subheading: "Wireless fire alarm systems for construction sites.",
     logo: "https://media.licdn.com/dms/image/v2/C560BAQEEzuqalXNz7w/company-logo_200_200/company-logo_200_200/0/1669810783586/ramtech_corporation_logo?e=1753920000&v=beta&t=dL3jAVJj4DtRNhgitZKqEcmu7C7Mg4hJrEP5NcezHRM",
     categoryId: 7,
+    website: "https://www.ramtech.co.uk/",
     details: {
       overview: "Ramtech Electronics specializes in advanced technological solutions, and with their WES3 system, they have established a foothold in the realm of fire safety for construction sites and buildings. Ramtech's WES3 system is a temporary wireless fire alarm system designed primarily for construction sites. Utilizing advanced wireless technology, WES3 ensures swift communication in emergency scenarios, bolstering onsite safety. With features like medical alerts, fire detection, and evacuation functionalities, it provides comprehensive protection. The system's design is rooted in the understanding of the dynamic nature of construction sites, emphasizing easy installation, mobility, and scalability.",
       regions: ["US", "Canada", "UK&I", "LATAM", "Europe", "Asia", "Pacific"],

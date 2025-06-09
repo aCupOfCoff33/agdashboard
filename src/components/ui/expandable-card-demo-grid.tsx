@@ -4,7 +4,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../../hooks/use-outside-click";
-import type { Company } from "../../types"; // Ensure this path is correct and Company type includes website
+import type { Company } from "../../types";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -16,14 +16,13 @@ interface InternalCard {
   employeeCount?: string;
   regions?: string[];
   overview: string;
-  originalCompanyData: Company; // This Company type should have the website field
+  originalCompanyData: Company; 
 }
 
 interface ExpandableCardGridProps {
   companies: Company[];
 }
 
-// Consistent layout transition for all animations
 const layoutTransition = {
   type: "spring",
   stiffness: 400,
@@ -31,7 +30,6 @@ const layoutTransition = {
   mass: 0.8,
 };
 
-// Smooth fade transitions for content that doesn't need layout animation
 const fadeTransition = {
   duration: 0.2,
   ease: "easeOut",
@@ -81,7 +79,7 @@ export default function ExpandableCardGrid({
   });
 
   const displayCards: InternalCard[] = companies.map((company) => ({
-    id: String(company.id ?? Math.random().toString()), // Ensure company.id is a string
+    id: String(company.id ?? Math.random().toString()), 
     title: company.name,
     description: company.subheading,
     src: company.logo || "https://via.placeholder.com/150x150.png?text=No+Logo",
