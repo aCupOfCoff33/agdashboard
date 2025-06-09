@@ -266,7 +266,7 @@ export default function ExpandableCardGrid({
             onClick={() => !isClosing && setActive(card)}
             className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col overflow-hidden"
             style={{
-              height: 160,
+              height: 190,
               opacity: active && active.id === card.id ? 0.3 : 1,
               pointerEvents: isClosing ? "none" : "auto",
             }}
