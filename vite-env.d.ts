@@ -1,6 +1,7 @@
 interface ImportMetaEnv {
-  readonly VITE_STRAPI_API_TOKEN: string
-  // add more env variables here as needed
+  readonly VITE_SANITY_PROJECT_ID: string;
+  readonly VITE_SANITY_DATASET: string;
+  readonly VITE_STRAPI_API_TOKEN: string;
 }
 
 interface ImportMeta {
