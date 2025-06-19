@@ -1,13 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+// src/main.tsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ApolloProvider } from '@apollo/client';
+import './index.css';
+import App from './App.jsx';
+import apolloClient from './config/apolloClient'; // Import the client
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>
-      <App />
+      <ApolloProvider client={apolloClient}> {/* Wrap App with ApolloProvider */}
+        <App />
+      </ApolloProvider>
     </StrictMode>,
   );
 } else {
