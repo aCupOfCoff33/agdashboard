@@ -1,12 +1,15 @@
 // src/adapters/companyAdapter.ts
+
+// This interface now perfectly matches a document returned from Sanity
+// based on your schema and our upcoming GROQ query.
 export interface ApiCompany {
-  documentId: string;      // NEW
-  name: string;
-  subheading: string;
-  logo: string;
-  website: string
-  detail: {
-    id: string;
+  _id: string; // Sanity's internal unique ID
+  documentId: string; // Your custom 'documentId' field for routing/linking
+  name?: string;
+  subheading?: string;
+  logo?: string; // This will be a URL string from our GROQ query
+  website?: string;
+  detail?: {
     overview?: string;
     region?: string[];
     risksTreatedOriginal?: string[];
@@ -20,31 +23,33 @@ export interface ApiCompany {
     risksTreatedWeb?: string[];
     aboutCompanyText?: string;
     keySolutions?: {
-      id: string;
+      _key: string; // Sanity's key for array items
       title: string;
       description: string;
     }[];
     impactMetrics?: {
-      id: string;
+      _key: string;
       metricName: string;
       value: string;
     }[];
+    // Your schema confirms this is an array
     costModel?: {
-      id: string;
+      _key: string;
       type: string;
       description: string;
     }[];
     customerSuccessStories?: {
-      id: string;
+      _key: string;
       title: string;
       description: string;
-      imageURL: string;
+      imageURL: string; // We will rename 'image' to 'imageURL' in the query
     }[];
   };
 }
 
+// This interface DOES NOT CHANGE. It's what your components use.
 export interface Company {
-  id: string; // uses detail.id
+  id: string; // Will use 'documentId' from Sanity
   name: string;
   subheading: string;
   logo: string;
@@ -63,32 +68,29 @@ export interface Company {
     projectIntegrationPhases: string[];
     risksTreatedWeb: string[];
     aboutCompanyText: string;
-    keySolutions: ApiCompany['detail']['keySolutions'];
-    impactMetrics: ApiCompany['detail']['impactMetrics'];
+    keySolutions: { title: string; description: string; }[];
+    impactMetrics: { metricName: string; value: string; }[];
     costModel: { id: string; type: string; description: string };
-    customerSuccessStories: ApiCompany['detail']['customerSuccessStories'];
+    customerSuccessStories: { title: string; description: string; imageURL?: string }[];
   };
 }
 
 export const adaptCompany = (raw: ApiCompany | null): Company | null => {
   if (!raw) {
     console.error("adaptCompany received null raw data");
-    return null; // Or throw an error, or return a default Company structure
+    return null;
   }
 
+  // Use your custom `documentId` field as the primary ID for the app.
+  // Fallback to Sanity's `_id` if `documentId` is missing.
+  const companyId = raw.documentId || raw._id;
   const { name, subheading, logo, website, detail } = raw;
-
-  // Ensure documentId is a string and not undefined/null before using it.
-  // The primary fix (fetching documentId in GET_ALL_COMPANIES) should prevent this,
-  // but this makes the adapter more robust.
-  const companyId = String(raw.documentId ?? detail?.id ?? name ?? Math.random().toString());
-
 
   return {
     id: companyId,
     name: name ?? 'Unnamed Company',
     subheading: subheading ?? '',
-    logo: logo ?? '',
+    logo: logo ?? '', // This is now a direct URL from the query
     website: website ?? '',
     details: {
       id: companyId, // Use the same derived companyId
@@ -106,14 +108,16 @@ export const adaptCompany = (raw: ApiCompany | null): Company | null => {
       aboutCompanyText: detail?.aboutCompanyText ?? '',
       keySolutions: detail?.keySolutions ?? [],
       impactMetrics: detail?.impactMetrics ?? [],
+      // The schema says costModel is an array. We'll take the first item.
       costModel:
         detail?.costModel && detail.costModel.length > 0
-          ? detail.costModel[0]
+          ? { id: detail.costModel[0]._key, ...detail.costModel[0] }
           : { id: '', type: '', description: '' },
+      // The schema says customerSuccessStories has `image`, which we rename to `imageURL` in the query
       customerSuccessStories: detail?.customerSuccessStories ?? [],
     },
   };
 };
 
 export const adaptCompanies = (items: (ApiCompany | null)[]): Company[] =>
-  items.map(item => adaptCompany(item)).filter(Boolean) as Company[]; // Filter out any nulls if adaptCompany can return null
+  items.map(item => adaptCompany(item)).filter(Boolean) as Company[];
